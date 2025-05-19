@@ -1,0 +1,203 @@
+#TAREA Nro.4
+#Estudiante: Masiel Lia Aguilar Ameller  
+#Código: 87770  
+#Introducción
+#La Tabla Periódica de los Elementos es una herramienta fundamental en química que organiza todos los elementos químicos conocidos según sus propiedades y estructura atómica. 
+#Este documento proporciona información detallada sobre cada elemento y está diseñado para estudiantes de Bioingeniería en Recursos Naturales.
+
+# 2. Estructura de la Tabla Periódica
+# In[1]:
+# Definimos la estructura básica de la tabla periódica
+estructura_tabla = [
+    ["Periodos", "7 filas horizontales"],
+    ["Grupos", "18 columnas verticales"],
+    ["Bloques", "s, p, d, f (según el orbital del último electrón)"]
+]
+# Mostramos la estructura como una tabla
+print("ESTRUCTURA DE LA TABLA PERIÓDICA")
+print("-" * 40)
+print(f"{'Clasificación':<15} | {'Descripción':<25}")
+print("-" * 40)
+for item in estructura_tabla:
+    print(f"{item[0]:<15} | {item[1]:<25}")
+
+# ## 3. Clasificación de los Elementos
+# In[2]:
+# Creamos diccionarios para representar las clasificaciones
+clasificacion_tipo = {
+    'Metales': 'Ocupan el lado izquierdo y central de la tabla (excepto el hidrógeno)',
+    'No metales': 'Ocupan la parte superior derecha',
+    'Metaloides': 'Forman una diagonal entre metales y no metales',
+    'Gases nobles': 'Último grupo (18)'
+}
+# Mostramos la clasificación por tipo en formato de texto
+print("CLASIFICACIÓN DE ELEMENTOS POR TIPO")
+print("-" * 60)
+for tipo, descripcion in clasificacion_tipo.items():
+    print(f"{tipo:<12} | {descripcion}")
+print("\n")
+# Clasificación por bloque
+clasificacion_bloque = {
+    'Bloque s': 'Grupos 1 y 2',
+    'Bloque p': 'Grupos 13 al 18',
+    'Bloque d': 'Grupos 3 al 12 (metales de transición)',
+    'Bloque f': 'Lantánidos y actínidos (series separadas)'
+}
+print("CLASIFICACIÓN DE ELEMENTOS POR BLOQUE")
+print("-" * 60)
+for bloque, descripcion in clasificacion_bloque.items():
+    print(f"{bloque:<10} | {descripcion}")
+
+# 4. Información de Cada Elemento
+# Para cada elemento, se incluye información como:
+# - Número atómico (Z)
+# - Símbolo químico
+# - Nombre
+# - Masa atómica
+# - Configuración electrónica
+# - Estado de oxidación
+# - Propiedades físicas y químicas
+
+# 5. Elementos Más Importantes
+# In[3]:
+# Creamos una lista con los elementos más importantes
+elementos_importantes = [
+    ["Carbono (C)", "Vida", 10],
+    ["Hidrógeno (H)", "Vida", 10],
+    ["Oxígeno (O)", "Vida", 10],
+    ["Nitrógeno (N)", "Vida", 9],
+    ["Hierro (Fe)", "Industrial", 8],
+    ["Aluminio (Al)", "Industrial", 7],
+    ["Silicio (Si)", "Tecnología", 9],
+    ["Litio (Li)", "Tecnología", 8]
+]
+# Visualizamos los elementos más importantes como una tabla
+print("ELEMENTOS MÁS IMPORTANTES Y SU RELEVANCIA")
+print("-" * 50)
+print(f"{'Elemento':<15} | {'Categoría':<12} | {'Importancia (1-10)':<10}")
+print("-" * 50)
+for elemento in elementos_importantes:
+    print(f"{elemento[0]:<15} | {elemento[1]:<12} | {elemento[2]:<10}")
+# Visualizamos como un gráfico básico en ASCII
+print("\nGRÁFICO DE IMPORTANCIA (ASCII):")
+for elemento in elementos_importantes:
+    barra = "#" * elemento[2]
+    print(f"{elemento[0]:<15} | {barra} {elemento[2]}/10")
+
+# 6. Enlaces Químicos
+# Los enlaces químicos son fuerzas que mantienen unidos a los átomos para formar moléculas o compuestos.
+# In[4]:
+# Definimos información sobre los tipos de enlaces
+tipos_enlaces = {
+    'Iónico': {
+        'Formación': 'Transferencia de electrones',
+'Características': ['Alta temperatura de fusión/ebullición', 'Conducen electricidad disueltos/fundidos'],
+        'Ejemplos': ['NaCl', 'MgO', 'CaCl₂']
+    },
+    'Covalente': {
+        'Formación': 'Compartición de electrones',
+        'Características': ['Pueden ser sólidos, líquidos o gases', 'Generalmente no conducen electricidad'],
+        'Ejemplos': ['H₂O', 'CH₄', 'CO₂', 'N₂']
+    },
+    'Metálico': {
+        'Formación': '"Mar de electrones" libres',
+        'Características': ['Alta conductividad', 'Brillo metálico', 'Maleabilidad/ductilidad'],
+        'Ejemplos': ['Fe', 'Cu', 'Al', 'Au', 'Ag']
+    }
+}
+# Mostramos la información sobre los enlaces
+print("TIPOS DE ENLACES QUÍMICOS")
+print("=" * 70)
+for tipo, info in tipos_enlaces.items():
+    print(f"\n{tipo.upper()}")
+    print("-" * 30)
+    print(f"Formación: {info['Formación']}")
+    print("Características:")
+    for caract in info['Características']:
+        print(f"  - {caract}")
+    print("Ejemplos: " + ", ".join(info['Ejemplos']))
+
+# 7. Representación de Enlaces Químicos
+# In[5]:
+# Representaciones simples de enlaces usando caracteres ASCII
+# Enlace Iónico (NaCl)
+print("REPRESENTACIÓN DE ENLACE IÓNICO (NaCl)")
+print("  Na⁺       Cl⁻  ")
+print("   O---------O   ")
+print("      [····>]    ")  # Flecha indicando transferencia de electrón
+print("   (Transferencia de electrones)\n")
+
+# Enlace Covalente (H₂)
+print("REPRESENTACIÓN DE ENLACE COVALENTE (H₂)")
+print("    H         H    ")
+print("    O=========O    ")
+print("       [::]       ")  # Representa los electrones compartidos
+print("   (Compartición de electrones)\n")
+
+# Enlace Metálico
+print("REPRESENTACIÓN DE ENLACE METÁLICO")
+print("  O    O    O  ")
+print("    ·  ·  ·    ")  # Los puntos representan electrones libres
+print("  O    O    O  ")
+print("    ·  ·  ·    ")
+print("  O    O    O  ")
+print("  ('Mar' de electrones libres)")
+
+# 8. Fuerzas Intermoleculares
+# Las fuerzas intermoleculares son interacciones más débiles que los enlaces principales pero igualmente importantes para muchas propiedades físicas y químicas.
+
+# In[6]:
+# Creamos una tabla comparativa de fuerzas
+fuerzas = [
+    ['Enlaces Covalentes', 150, 'Primaria'],
+    ['Enlaces Iónicos', 700, 'Primaria'],
+    ['Enlaces Metálicos', 100, 'Primaria'],
+['Puentes de Hidrógeno', 20, 'Secundaria'],
+    ['Dipolo-Dipolo', 5, 'Secundaria'],
+    ['Fuerzas de London', 2, 'Secundaria']
+]
+# Visualización de la intensidad de las fuerzas como tabla
+print("COMPARACIÓN DE ENLACES Y FUERZAS INTERMOLECULARES")
+print("-" * 60)
+print(f"{'Fuerza':<20} | {'Intensidad (kJ/mol)':<20} | {'Tipo':<10}")
+print("-" * 60)
+for fuerza in fuerzas:
+    print(f"{fuerza[0]:<20} | {fuerza[1]:<20} | {fuerza[2]:<10}")
+# Visualización ASCII de la intensidad
+print("\nINTENSIDAD RELATIVA (ASCII):")
+for fuerza in fuerzas:
+    # Normalizamos para que la visualización sea adecuada
+    barra_len = int(fuerza[1] / 35) + 1  # Ajustamos factor de escala
+    barra = "*" * barra_len
+    print(f"{fuerza[0]:<20} | {barra} ({fuerza[1]} kJ/mol)")
+
+
+# 9. Conclusiones 
+# - La Tabla Periódica es una herramienta fundamental para entender la estructura y propiedades de los elementos químicos.
+# - Los elementos se clasifican según sus propiedades en metales, no metales, metaloides y gases nobles.
+# - Los enlaces químicos (iónicos, covalentes y metálicos) determinan las propiedades físicas y químicas de los compuestos.
+# - Las fuerzas intermoleculares, aunque más débiles que los enlaces primarios, tienen un papel crucial en propiedades como puntos de ebullición, solubilidad y estructura de biomoléculas.
+
+# 10. Ejemplo: Propiedades de algunos elementos
+# In[7]:
+# Código para explorar las propiedades de algunos elementos
+def mostrar_propiedades_elemento(simbolo, nombre, num_atomico, masa_atomica, periodo, grupo, bloque, tipo):
+    print(f"PROPIEDADES DE {nombre.upper()} ({simbolo})")
+    print("-" * 40)
+    print(f"Número atómico: {num_atomico}")
+    print(f"Masa atómica: {masa_atomica} u")
+    print(f"Ubicación: Periodo {periodo}, Grupo {grupo}, Bloque {bloque}")
+    print(f"Tipo: {tipo}")
+
+# Ejemplos de algunos elementos importantes
+elementos = [
+    ["H", "Hidrógeno", 1, 1.008, 1, 1, "s", "No metal"],
+    ["C", "Carbono", 6, 12.011, 2, 14, "p", "No metal"],
+    ["O", "Oxígeno", 8, 15.999, 2, 16, "p", "No metal"],
+    ["Na", "Sodio", 11, 22.990, 3, 1, "s", "Metal"],
+    ["Fe", "Hierro", 26, 55.845, 4, 8, "d", "Metal de transición"]
+]
+
+for elemento in elementos:
+    mostrar_propiedades_elemento(*elemento)
+    print() # Línea en blanco para separar
