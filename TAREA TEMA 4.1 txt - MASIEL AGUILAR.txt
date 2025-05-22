@@ -1,0 +1,106 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "cdffc2b8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#TAREA TEMA 4.1\n",
+    "\n",
+    "#  INFORME DE PRUEBA DE LABORATORIO\n",
+    "#Título: Evaluación de Desgaste en Materiales de Sellado\n",
+    "#Autor: Masiel Aguilar\n",
+    "#Fecha: 22 de mayo de 2025\n",
+    "#Departamento: Ingeniería"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dedc69c7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "## Propósito: \n",
+    "# Evaluar el comportamiento al desgaste de diferentes materiales de sellado bajo condiciones de fricción controladas, para determinar su idoneidad en aplicaciones industriales.\n",
+    "\n",
+    "## Procedimiento:\n",
+    "# Se seleccionaron tres materiales de sellado: PTFE, NBR y Viton. Cada muestra fue sometida a una prueba de desgaste utilizando un tribómetro de pin sobre disco, aplicando una carga constante de 10 N y una velocidad de deslizamiento de 0.5 m/s durante 60 minutos. Se midió la pérdida de masa de cada muestra para calcular el volumen de material desgastado.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "7678b877",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Material   Masa (mg)    Densidad (g/cm³)     Volumen Desgastado (mm³)      \n",
+      "PTFE       12.5         2.2                  5.68                          \n",
+      "NBR        8.3          1.0                  8.30                          \n",
+      "Viton      5.7          1.8                  3.17                          \n"
+     ]
+    }
+   ],
+   "source": [
+    "# Datos iniciales\n",
+    "materiales = ['PTFE', 'NBR', 'Viton']\n",
+    "perdida_masa_mg = [12.5, 8.3, 5.7]      # en miligramos\n",
+    "densidad_g_cm3 = [2.2, 1.0, 1.8]        # en g/cm³\n",
+    "\n",
+    "# Mostrar encabezado de tabla\n",
+    "print(f\"{'Material':<10} {'Masa (mg)':<12} {'Densidad (g/cm³)':<20} {'Volumen Desgastado (mm³)':<30}\")\n",
+    "\n",
+    "# Calcular y mostrar resultados\n",
+    "for i in range(len(materiales)):\n",
+    "    masa_g = perdida_masa_mg[i] / 1000             # pasar a gramos\n",
+    "    volumen_cm3 = masa_g / densidad_g_cm3[i]       # volumen en cm³\n",
+    "    volumen_mm3 = volumen_cm3 * 1000               # convertir a mm³\n",
+    "\n",
+    "    print(f\"{materiales[i]:<10} {perdida_masa_mg[i]:<12} {densidad_g_cm3[i]:<20} {volumen_mm3:<30.2f}\")\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b630fcd7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "## Conclusiones\n",
+    "\n",
+    "#- PTFE: presentó la mayor pérdida de masa y volumen desgastado, indicando una menor resistencia al desgaste en comparación con los otros materiales.\n",
+    "#- Viton: mostró el mejor desempeño, con la menor pérdida de masa y volumen desgastado, siendo el más adecuado para aplicaciones donde la resistencia al desgaste es crítica.\n",
+    "#- NBR: tuvo un comportamiento intermedio, siendo una opción viable dependiendo de los requisitos específicos de la aplicación."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "MASIEL_AGUILAR_CARPETAVIRTUAL",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
